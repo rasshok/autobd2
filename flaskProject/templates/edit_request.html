@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Request</h2>
+<form method="POST">
+    <label for="request_number">Request Number:</label>
+    <input type="text" id="request_number" name="request_number" value="{{ request[1] }}" required>
+
+    <label for="date_added">Date Added:</label>
+    <input type="date" id="date_added" name="date_added" value="{{ request[2] }}" required>
+
+    <label for="car_type">Car Type:</label>
+    <input type="text" id="car_type" name="car_type" value="{{ request[3] }}" required>
+
+    <label for="car_model">Car Model:</label>
+    <input type="text" id="car_model" name="car_model" value="{{ request[4] }}" required>
+
+    <label for="problem_description">Problem Description:</label>
+    <textarea id="problem_description" name="problem_description">{{ request[5] }}</textarea>
+
+    <label for="client_name">Client Name:</label>
+    <input type="text" id="client_name" name="client_name" value="{{ request[6] }}" required>
+
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" value="{{ request[7] }}" required>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="new" {% if request[8] == 'new' %}selected{% endif %}>New</option>
+        <option value="in_progress" {% if request[8] == 'in_progress' %}selected{% endif %}>In Progress</option>
+        <option value="waiting_for_parts" {% if request[8] == 'waiting_for_parts' %}selected{% endif %}>Waiting for Parts</option>
+        <option value="ready_for_pickup" {% if request[8] == 'ready_for_pickup' %}selected{% endif %}>Ready for Pickup</option>
+        <option value="completed" {% if request[8] == 'completed' %}selected{% endif %}>Completed</option>
+    </select>
+
+    <label for="assigned_mechanic">Assigned Mechanic:</label>
+    <input type="text" id="assigned_mechanic" name="assigned_mechanic" value="{{ request[9] }}">
+
+    <button type="submit">Update Request</button>
+</form>
+{% endblock %}
