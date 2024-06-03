@@ -1,0 +1,10 @@
+﻿Vendor=IRONSKILLS
+Name=Барбершоп
+Version=1.0.1.1
+AppVersion=8.3
+[Config1]
+Catalog=Барбершоп\Барбершоп
+Source=1Cv8.cf
+[Config2]
+Catalog=Барбершоп\Барбершоп (демо)
+Source=1Cv8.dt
